@@ -3,16 +3,15 @@ const express = require('express')
 
 const app = express()
 
-
 const productos = new Contenedor('productos.txt');
 
 app.get('/productos', async (req, res) =>{
-    const mostrarProductos = await products.getAll();
+    const mostrarProductos = await productos.getAll();
 	res.send(`Se muestra todos los productos: ${mostrarProductos}`);
 })
 
 app.get('/productosRandom', async (req, res) =>{
-    const products = await products.getAll();
+    const products = await productos.getAll();
 	const numeroRandom = Math.floor(Math.random() * products.length);
 	res.send(`Se muestran productos random: ${products[numeroRandom]}`);
 })
