@@ -72,22 +72,24 @@ class Contenedor {
 
 const products = new Contenedor ('productos.txt')
 
-const trial = async () => {
-    let save = await products.save({
-        title: 'Cosa',
-		price: 546.67,
-		thumbnail:
-			'https://algo',
-    });
-   let getAll = await products.getAll()
-   let getById = await products.getById(2)
+//const trial = async () => {
+  //  let save = await products.save({
+    //    title: 'Cosa',
+	//	price: 546.67,
+	//	thumbnail:
+	//		'https://algo',
+  //  });
+  // let getAll = await products.getAll()
+   //let getById = await products.getById(2)
   // let deleteById = await products.deleteById(1)
   // let deleteAll = await products.deleteAll()
-    console.log('salvando ', save);
-    console.log('obteniendo ', getAll);
-    console.log('obteniendo por Id ', getById);
+//    console.log('salvando ', save);
+  //  console.log('obteniendo ', getAll);
+ //   console.log('obteniendo por Id ', getById);
  // console.log('eliminando por ID ', deleteById);
  //console.log('eliminando todo', deleteAll);
-};
+//};
 
-trial();
+//trial();
+
+module.exports = Contenedor; 
