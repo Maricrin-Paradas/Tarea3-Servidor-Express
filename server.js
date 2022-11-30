@@ -3,18 +3,21 @@ const express = require('express')
 
 const app = express()
 
-app.get('/produtos', async (req, res) =>{
-    const mostrarProductos = await productos.getAll();
+
+const productos = new Contenedor('productos.txt');
+
+app.get('/productos', async (req, res) =>{
+    const mostrarProductos = await products.getAll();
 	res.send(`Se muestra todos los productos: ${mostrarProductos}`);
 })
 
-app.get('/produtosRandom', async (req, res) =>{
-    const products = await productos.getAll();
+app.get('/productosRandom', async (req, res) =>{
+    const products = await products.getAll();
 	const numeroRandom = Math.floor(Math.random() * products.length);
 	res.send(`Se muestran productos random: ${products[numeroRandom]}`);
 })
 
-const PORT = 3000
+const PORT = 3000;
 
 const server = app.listen(PORT, ()=> {
     console.log(`Listening app port ${server.address().port}`);
